@@ -9,4 +9,4 @@ while True:
     elif (n==3):
         print("3")
     else :
-        print("else")
+        break

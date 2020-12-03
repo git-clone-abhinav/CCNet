@@ -13,9 +13,7 @@ while True:
         break
     if id == 0 and (time.time() - start_time) > timeout:
         #os.system("startx")
-        print("startx")
+        print("Connect to server")
         break
     #time.sleep(1)
     #os.system("cls")
-
-
