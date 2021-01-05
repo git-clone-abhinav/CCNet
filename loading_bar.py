@@ -1,24 +1,29 @@
-'''import time
+import time
 import sys
-
+import os
+import keyboard
 toolbar_width = 50
 
 # setup toolbar
-sys.stdout.write("[%s]" % (" " * toolbar_width))
+sys.stdout.write("%s" % (" " * toolbar_width))
 sys.stdout.flush()
 sys.stdout.write("\b" * (toolbar_width+1)) # return to start of line, after '['
-
+print("Press DEL to enter Setup..........")
+print("")
 for i in range(toolbar_width):
+    if keyboard.is_pressed("del"):
+        os.system("script.py")
+        break
     time.sleep(0.1) # do real work here
     # update the bar
-    sys.stdout.write("-")
+    sys.stdout.write("█")
     sys.stdout.flush()
 
-sys.stdout.write("]\n") # this ends the progress bar'''
+#sys.stdout.write("]\n") # this ends the progress bar
 
-import time, sys
+'''import time, sys
 
-'''# update_progress() : Displays or updates a console progress bar
+# update_progress() : Displays or updates a console progress bar
 ## Accepts a float between 0 and 1. Any int will be converted to a float.
 ## A value under 0 represents a 'halt'.
 ## A value at 1 or bigger represents 100%
@@ -37,7 +42,8 @@ def update_progress(progress):
         progress = 1
         status = "Done...\r\n"
     block = int(round(barLength*progress))
-    text = "\rPercent: [{0}] {1}% {2}".format( "#"*block + "-"*(barLength-block), progress*100, status)
+    #text = "\rPercent: [{0}] {1}% {2}".format( "#"*block + "-"*(barLength-block), progress*100, status)
+    text = "\rPercent: [{0}] {1}%".format( "#"*block + "-"*(barLength-block), progress*100)
     sys.stdout.write(text)
     sys.stdout.flush()
 
@@ -73,11 +79,11 @@ for i in range(101):
 
 print ("")
 print ("Test completed")
-time.sleep(10)'''
+time.sleep(10)
 
 from tqdm import tqdm 
 import time
   
 for i in tqdm (range (50), desc="Halt :"): 
     time.sleep(0.1)
-    pass
+    pass'''
